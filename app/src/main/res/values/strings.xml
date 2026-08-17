@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Daily Task Manager</string>
+
+    <string name="tasks">Tasks</string>
+    <string name="add_task">Add Task</string>
+
+    <string name="task_name">Task Name:</string>
+    <string name="enter_task_name">Enter task name</string>
+
+    <string name="description">Description:</string>
+    <string name="enter_description">Enter task description</string>
+
+    <string name="save_task">Save Task</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="task_details">Task Details</string>
+    <string name="task">Task:</string>
+
+    <string name="status">Status:</string>
+    <string name="completed">Completed</string>
+
+    <string name="delete">Delete</string>
+    <string name="back">Back</string>
+
+    <string name="sample_task_1">Complete Android Assignment</string>
+    <string name="sample_task_2">Study for Exam</string>
+    <string name="sample_task_3">Finish Project</string>
+
+    <string name="sample_description">Finishing UI design document</string>
+
+</resources>
