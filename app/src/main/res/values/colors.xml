@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- Daily Task Manager color palette -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="primary">#1565C0</color>
+    <color name="primary_dark">#0D47A1</color>
+    <color name="primary_light">#42A5F5</color>
+
+    <color name="accent">#FF9800</color>
+
+    <color name="background">#F5F7FA</color>
+    <color name="surface">#FFFFFFFF</color>
+
+    <color name="text_primary">#1F2937</color>
+    <color name="text_secondary">#6B7280</color>
+
+    <color name="completed">#2E7D32</color>
+    <color name="delete">#C62828</color>
+
+    <color name="divider">#E5E7EB</color>
+
 </resources>

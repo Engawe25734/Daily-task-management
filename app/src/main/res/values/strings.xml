@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">Daily Task Manager</string>
+    <string name="welcome_message">Stay organized. Complete your goals.</string>
 
     <string name="tasks">Tasks</string>
     <string name="add_task">Add Task</string>
