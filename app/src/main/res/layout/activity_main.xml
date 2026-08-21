@@ -32,7 +32,7 @@
             android:textColor="@color/text_primary"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:fontFamily="sans"
+            android:fontFamily="sans-serif"
             android:layout_marginBottom="4dp" />
 
         <TextView
@@ -42,7 +42,7 @@
             android:text="@string/tasks"
             android:textColor="@color/text_secondary"
             android:textSize="18sp"
-            android:fontFamily="sans"
+            android:fontFamily="sans-serif"
             android:layout_marginBottom="12dp" />
 
         <androidx.recyclerview.widget.RecyclerView
