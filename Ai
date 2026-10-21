@@ -1,17 +1,1 @@
-data. Go ahead and enter the following code.
-from sklearn.preprocessing import OrdinalEncoder
-encoder = OrdinalEncoder (handle_unknown=' use_encoded_value', unknown_value=-1)
-anomalies = test_data|test_data|"anomaly_score"] == - 1]
-print(f"Detected {len(anomalies)} anomalies out of {len(test_data)} test samples. ")
-If you are successful, the output will resemble this:
-Detected 508 anomalies out of 10000 test samples.
-Capture screen shots of your code input (with name in comments) and output before proceeding. Make sure it is pasted into your lab report.
-6. For our last step, a graphical representation of the results will be display. Enter this code into the next box.
-import matplotlib.pyplot as plt
-normal_data = test_dataltest_datal "anomaly_score"] == 1]["threat_score"]
-anomalous_data = test_dataltest_datal "anomaly_score"] == -1] ["threat_score"]
-plt.hist(normal_data, bins=50, alpha=0.5, label="Normal", color="blue") plt.hist(anomalous_data, bins=50, alpha=0.5, label="Anomalous", color="red") plt.xlabel("Threat Score")
-plt.ylabel("Frequency")
-plt.legend()
-plt.title("Anomaly Detection using Isolation Forest") plt.show()
-If you are successful, the output will resemble this:
+
