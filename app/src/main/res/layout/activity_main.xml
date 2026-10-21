@@ -1,69 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/background">
+    android:padding="16dp">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/mainToolbar"
+    <TextView
+        android:id="@+id/txtAppTitle"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/primary"
-        android:elevation="6dp"
-        app:navigationIcon="@drawable/ic_task_toolbar"
-        app:title="@string/app_name"
-        app:titleTextColor="@color/white" />
+        android:layout_height="wrap_content"
+        android:text="Daily Task Manager"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="12dp" />
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/edtSearchTasks"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="wrap_content"
+        android:hint="Search tasks by name..."
+        android:inputType="text"
+        android:singleLine="true"
+        android:importantForAutofill="no" />
 
-        <TextView
-            android:id="@+id/txtAppTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/welcome_message"
-            android:textColor="@color/text_primary"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif"
-            android:layout_marginBottom="4dp" />
+    <TextView
+        android:id="@+id/txtTasksTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Tasks"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
 
-        <TextView
-            android:id="@+id/txtTasksTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/tasks"
-            android:textColor="@color/text_secondary"
-            android:textSize="18sp"
-            android:fontFamily="sans-serif"
-            android:layout_marginBottom="12dp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerTasks"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerTasks"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_marginBottom="16dp"
-            android:clipToPadding="false" />
+    <Button
+        android:id="@+id/btnAddTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Task" />
 
-        <Button
-            android:id="@+id/btnAddTask"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/add_task"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/primary"
-            android:minHeight="56dp" />
+    <Button
+        android:id="@+id/btnChangePassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Change Password" />
 
-    </LinearLayout>
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout" />
 
 </LinearLayout>
+
+
