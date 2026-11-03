@@ -77,6 +77,24 @@
                 android:layout_marginBottom="24dp" />
 
             <TextView
+                android:id="@+id/txtDueDateLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Due Date"
+                android:textColor="@color/text_secondary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtTaskDueDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
                 android:id="@+id/txtStatusLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -94,6 +112,18 @@
                 android:textStyle="bold"
                 android:layout_marginTop="6dp"
                 android:layout_marginBottom="30dp" />
+
+            <Button
+                android:id="@+id/btnEditTask"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Edit Task"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/primary"
+                android:minHeight="56dp"
+                android:layout_marginBottom="12dp" />
 
             <Button
                 android:id="@+id/btnDeleteTask"
@@ -119,7 +149,5 @@
                 android:minHeight="56dp" />
 
         </LinearLayout>
-
     </ScrollView>
-
 </LinearLayout>
