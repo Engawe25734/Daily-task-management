@@ -1,4 +1,3 @@
-
 package com.example.dailytaskmanager
 
 import android.app.DatePickerDialog
@@ -6,7 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.util.Calendar
 import java.util.Locale
@@ -14,6 +12,7 @@ import java.util.Locale
 class AddTaskActivity : AppCompatActivity() {
 
     private var selectedDueDate = ""
+    private var existingTask: Task? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,10 +26,32 @@ class AddTaskActivity : AppCompatActivity() {
         val btnSaveTask = findViewById<Button>(R.id.btnSaveTask)
         val btnCancelTask = findViewById<Button>(R.id.btnCancelTask)
 
+        existingTask = intent.getSerializableExtra("task") as? Task
+        existingTask?.let { task ->
+            edtTaskName.setText(task.name)
+            edtTaskDescription.setText(task.description)
+            selectedDueDate = task.dueDate
+            btnSaveTask.text = "Save Changes"
+            findViewById<TextView>(R.id.txtAddTaskTitle).text = "Edit Task"
+            btnSelectDueDate.text =
+                if (selectedDueDate.isBlank()) "Select Due Date"
+                else "Due Date: $selectedDueDate"
+        }
+
         btnSelectDueDate.setOnClickListener {
             val calendar = Calendar.getInstance()
+            if (selectedDueDate.isNotBlank()) {
+                val parts = selectedDueDate.split("-")
+                if (parts.size == 3) {
+                    calendar.set(
+                        parts[0].toIntOrNull() ?: calendar.get(Calendar.YEAR),
+                        (parts[1].toIntOrNull() ?: 1) - 1,
+                        parts[2].toIntOrNull() ?: calendar.get(Calendar.DAY_OF_MONTH)
+                    )
+                }
+            }
 
-            val datePicker = DatePickerDialog(
+            DatePickerDialog(
                 this,
                 { _, year, month, day ->
                     selectedDueDate = String.format(
@@ -40,15 +61,12 @@ class AddTaskActivity : AppCompatActivity() {
                         month + 1,
                         day
                     )
-
                     btnSelectDueDate.text = "Due Date: $selectedDueDate"
                 },
                 calendar.get(Calendar.YEAR),
                 calendar.get(Calendar.MONTH),
                 calendar.get(Calendar.DAY_OF_MONTH)
-            )
-
-            datePicker.show()
+            ).show()
         }
 
         btnSaveTask.setOnClickListener {
@@ -64,13 +82,11 @@ class AddTaskActivity : AppCompatActivity() {
             val task = Task(
                 name = name,
                 description = description,
-                completed = false,
+                completed = existingTask?.completed ?: false,
                 dueDate = selectedDueDate
             )
 
-            val resultIntent = Intent()
-            resultIntent.putExtra("task", task)
-            setResult(RESULT_OK, resultIntent)
+            setResult(RESULT_OK, Intent().putExtra("task", task))
             finish()
         }
 
@@ -80,4 +96,3 @@ class AddTaskActivity : AppCompatActivity() {
         }
     }
 }
-
