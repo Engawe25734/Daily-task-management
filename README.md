@@ -8,23 +8,23 @@ The goal of this project is to provide a simple and user-friendly mobile applica
 
 ## Main Features
 
-- User Registration:** Allows new users to create an account.
-- User Login:** Allows registered users to access the application.
-- Add Tasks:** Users can create tasks and enter task details.
-- Edit Tasks:** Users can update existing task information.
-- Delete Tasks:** Users can remove tasks they no longer need.
-- Search Tasks:** Users can find specific tasks.
-- Task Completion:** Users can mark tasks as completed.
-- Local Data Storage:** Saves application information on the device.
+- User Registration: Allows new users to create an account.
+- User Login: Allows registered users to access the application.
+- Add Tasks:Users can create tasks and enter task details.
+- Edit Tasks:Users can update existing task information.
+- Delete Tasks: Users can remove tasks they no longer need.
+- Search Tasks: Users can find specific tasks.
+- Task Completion: Users can mark tasks as completed.
+- Local Data Storage: Saves application information on the device.
 
 ## Application Activities
 
 The application uses multiple connected Android activities:
 
-1. **Login and Registration Activity:** Handles user registration and login.
-2. **Main Activity:** Displays the task list and provides access to task management features.
-3. **Task Details Activity:** Displays task information and allows users to edit or delete tasks.
-4. **Add Task Activity:** Allows users to create new tasks and update existing ones.
+1. Login and Registration Activity:** Handles user registration and login.
+2. Main Activity: Displays the task list and provides access to task management features.
+3. Task Details Activity: Displays task information and allows users to edit or delete tasks.
+4. Add Task Activity: Allows users to create new tasks and update existing ones.
 
 ## Security Features
 
