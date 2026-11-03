@@ -1,6 +1,7 @@
 package com.example.dailytaskmanager
 
 import android.content.Intent
+import androidx.appcompat.app.AlertDialog
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -60,12 +61,19 @@ class TaskDetailsActivity : AppCompatActivity() {
         }
 
         btnDeleteTask.setOnClickListener {
-            val resultIntent = Intent().apply {
-                putExtra("position", position)
-                putExtra("deleted", true)
-            }
-            setResult(RESULT_OK, resultIntent)
-            finish()
+            AlertDialog.Builder(this)
+                .setTitle("Delete task?")
+                .setMessage("Are you sure you want to delete \"${task.name}\"?")
+                .setNegativeButton("Cancel", null)
+                .setPositiveButton("Delete") { _, _ ->
+                    val resultIntent = Intent().apply {
+                        putExtra("position", position)
+                        putExtra("deleted", true)
+                    }
+                    setResult(RESULT_OK, resultIntent)
+                    finish()
+                }
+                .show()
         }
 
         btnBack.setOnClickListener {
